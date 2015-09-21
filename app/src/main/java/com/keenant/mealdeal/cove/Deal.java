@@ -1,23 +1,28 @@
-package com.keenant.mealdeal;
+package com.keenant.mealdeal.cove;
+
+import android.graphics.Bitmap;
 
 import java.util.Date;
 
 public class Deal {
-
     private final int id;
     private final Restaurant restaurant;
     private final String text;
     private final String details;
-    private final int image;
+    private final String imagePath;
     private final Date end;
+    private int code;
 
-    public Deal(int id, Restaurant restaurant, String text, String details, int image, Date end) {
+    private Bitmap image;
+
+    public Deal(int id, Restaurant restaurant, String text, String details, String imagePath, Date end, int code) {
         this.id = id;
         this.restaurant = restaurant;
         this.text = text;
         this.details = details;
-        this.image = image;
+        this.imagePath = imagePath;
         this.end = end;
+        this.code = code;
     }
 
     public int getId() {
@@ -36,11 +41,23 @@ public class Deal {
         return details;
     }
 
-    public int getImage() {
-        return image;
+    public String getImagePath() {
+        return imagePath;
     }
 
     public Date getEnd() {
         return end;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public Bitmap getImage() {
+        return image;
+    }
+
+    public void setImage(Bitmap image) {
+        this.image = image;
     }
 }

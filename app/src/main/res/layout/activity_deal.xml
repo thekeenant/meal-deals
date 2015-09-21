@@ -1,0 +1,105 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    tools:context=".MainActivity">
+
+    <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+        android:id="@+id/scrollview"
+        android:text="@string/hello_world"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/deal_image"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/meal2" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ff252522">
+                <TextView
+                    android:id="@+id/deal_text"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#ffffff"
+                    android:padding="16dp"
+                    android:text="Testing Text" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:paddingBottom="5dp"
+                    android:text="{fa-info-circle} Details" />
+                <TextView
+                    android:id="@+id/deal_details"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="Lorem Ipsum" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:text="{fa-map-marker} Location" />
+                <TextView
+                    android:id="@+id/deal_location"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="Lorem Ipsum" />
+            </LinearLayout>
+
+
+            <com.google.android.gms.maps.MapView android:id="@+id/mapview"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+        </LinearLayout>
+
+    </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="top"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/claim_deal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Claim Deal!"
+        android:background="#ff14970f"
+        android:layout_gravity="center_horizontal|bottom" />
+
+</FrameLayout>

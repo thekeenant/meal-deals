@@ -2,19 +2,52 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.keenant.mealdeal" >
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDRK1OvQehFbGj_JCX3PIcAxKWgf_T7YLs" />
+
         <activity
-            android:name="com.keenant.mealdeal.DealActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name=".activities.LoginActivity"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name=".activities.DealActivity"
+            android:label="@string/title_activity_deal" >
+        </activity>
+        <activity
+            android:name=".activities.DealListActivity"
+            android:label="Find a Deal!" >
+        </activity>
+        <activity
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name=".activities.SplashActivity"
+            android:label="Meal Deals" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MallListActivity"
+            android:label="@string/title_activity_mall_list" >
+        </activity>
+        <activity
+            android:name=".activities.CategoryActivity"
+            android:label="Select a Category" >
         </activity>
     </application>
 
